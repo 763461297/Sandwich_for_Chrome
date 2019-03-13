@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sandwich Default Options</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .form-horizontal label.control-label {
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="page-header">
+    <h5>Sandwich Default Options</h5>
+</div>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Callback</label>
+        <div class="col-xs-9">
+            <input type="url" id="sandwich-form-callback" class="form-control" placeholder="Callback interface URL" title="Callback interface url, support HTTPS."/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Method</label>
+        <div class="col-xs-5">
+            <select id="sandwich-form-method" class="form-control" title="Request method/type">
+                <option>POST</option>
+                <option>GET</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">ContentType</label>
+        <div class="col-xs-9">
+            <select id="sandwich-form-contentType" class="form-control" title="Content-Type value">
+                <option value="application/x-www-form-urlencoded">x-www-form-urlencoded</option>
+                <option value="application/json">application/json</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Data</label>
+        <div class="col-xs-9">
+            <input id="sandwich-form-data" type="text" class="form-control input-single" placeholder="Request parameters" title="Callback request data, follow the corresponding Content-Type format. Enter help() show more variables."/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Refresher</label>
+        <div class="col-xs-7">
+            <input id="sandwich-form-refresh" type="text" class="form-control" placeholder="Refresher selector" title="Use CSS selectors to specify elements to refresh the data."/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Source</label>
+        <div class="col-xs-7">
+            <input id="sandwich-form-source" type="text" class="form-control" placeholder="Element selector" title="Use CSS selectors to specify elements to get data value."/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Interval</label>
+        <div class="col-xs-5">
+            <input id="sandwich-form-interval" type="number" step="1000" class="form-control" placeholder="Interval" title="Interval of check value, unit ms."/>
+        </div>
+        <h4><span class="label label-default">ms</span></h4>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Capture</label>
+        <div class="col-xs-5">
+            <select id="sandwich-form-capture" class="form-control" title="How to capture the value of the element.">
+                <option>html</option>
+                <option>val</option>
+                <option>text</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Compare</label>
+        <div class="col-xs-6">
+            <select id="sandwich-form-compare" class="form-control" title="Comparator with threshold">
+                <option>&gt;=</option>
+                <option>&gt;</option>
+                <option>==</option>
+                <option>&lt;=</option>
+                <option>&lt;</option>
+                <option>!=</option>
+                <option title="In a closed interval, separated by ','">between</option>
+                <option title="Not in a closed interval, separated by ','">not between</option>
+                <option title="Satisfies a regular expression, not full text match">regexp</option>
+                <option title="Triggered when the content changes until the regular expression is satisfied">change until</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Threshold</label>
+        <div class="col-xs-7">
+            <input id="sandwich-form-threshold" type="text" class="form-control" placeholder="Threshold value" title="Threshold value/Regular Expression/Closed Interval"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Most Call</label>
+        <div class="col-xs-5">
+            <input id="sandwich-form-most" type="number" class="form-control" placeholder="0 is infinite"  s title="Automatic stop after a certain number of callbacks, 0 means infinite."/>
+        </div>
+        <div class="col-xs-4">
+            <select id="sandwich-form-enable" class="form-control"  title="Enable/Disable request callback interface">
+                <option>enable</option>
+                <option>disable</option>
+            </select>
+        </div>
+    </div>
+        <div class="form-group center-block">
+            <button class="btn btn-default col-xs-offset-4" id="btn-option-default" title="Load default without store.">Default</button>
+            <button class="btn btn-primary" id="btn-option-save" title="Save Settings">Save</button>
+        </div>
+</form>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/options.js"></script>
+</body>
+</html>

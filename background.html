@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="init-html">
+<div class="console_window" id="console_window">
+    <div class="console_window_title_box">
+        <span>Sandwich</span>
+    </div>
+    <div class="console_window_content form-panel">
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Callback</label>
+                <input type="url" id="sandwich-form-callback" class="form-control input-single" placeholder="Callback interface URL" title="Callback interface url, support HTTPS."/>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Method</label>
+                <select id="sandwich-form-method" class="form-control" style="width: 95px;" title="Request method/type">
+                    <option>POST</option>
+                    <option>GET</option>
+                </select>
+                <select id="sandwich-form-contentType" class="form-control" style="width: 210px;" title="Content-Type value">
+                    <option value="application/x-www-form-urlencoded">x-www-form-urlencoded</option>
+                    <option value="application/json">application/json</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Data</label>
+                <input id="sandwich-form-data" type="text" class="form-control input-single" placeholder="Request parameters" title="Callback request data, follow the corresponding Content-Type format. Enter help() show more variables."/>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Refresher</label>
+                <input id="sandwich-form-refresh" type="text" class="form-control" placeholder="Refresher selector" style="width: 136px" title="Use CSS selectors to specify elements to refresh the data."/>
+            </div>
+            <div class="form-group">
+                <label class="inline-label">Interval</label>
+                <input id="sandwich-form-interval" type="number" step="1000" class="form-control" placeholder="Interval" style="width: 110px;" title="Interval of check value, unit ms."/>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Source</label>
+                <input id="sandwich-form-source" type="text" class="form-control" placeholder="Element selector" style="width: 136px" title="Use CSS selectors to specify elements to get data value."/>
+            </div>
+            <div class="form-group">
+                <label class="inline-label">Capture</label>
+                <select id="sandwich-form-capture" class="form-control" style="width: 110px;" title="How to capture the value of the element.">
+                    <option>html</option>
+                    <option>val</option>
+                    <option>text</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Threshold</label>
+                <select id="sandwich-form-compare" class="form-control" style="width: 136px;" title="Comparator with threshold">
+                    <option>&gt;=</option>
+                    <option>&gt;</option>
+                    <option>==</option>
+                    <option>&lt;=</option>
+                    <option>&lt;</option>
+                    <option>!=</option>
+                    <option title="In a closed interval, separated by ','">between</option>
+                    <option title="Not in a closed interval, separated by ','">not between</option>
+                    <option title="Satisfies a regular expression, not full text match">regexp</option>
+                    <option title="Triggered when the content changes until the regular expression is satisfied">change until</option>
+                </select>
+                <input id="sandwich-form-threshold" type="text" class="form-control" placeholder="Threshold value" style="width: 170px;" title="Threshold value/Regular Expression/Closed Interval"/>
+            </div>
+        </div>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>Most Call</label>
+                <input id="sandwich-form-most" type="number" class="form-control" placeholder="0 is infinite"  style="width: 136px" title="Automatic stop after a certain number of callbacks, 0 means infinite."/>
+            </div>
+            <div class="form-group">
+                <label class="inline-label">Enable</label>
+                <select id="sandwich-form-enable" class="form-control" style="width: 110px;" title="Enable/Disable request callback interface">
+                    <option>enable</option>
+                    <option>disable</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-area">
+            <button class="console-btn" id="btn-clean-log" title="Clean logs">Clean Logs</button>
+            <button class="console-btn console-btn-ok" process-state="stop" id="btn_process_run" title="Run/Stop process">Run</button>
+        </div>
+    </div>
+    <div class="console_window_content console-log" id="log_area">
+    </div>
+</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/background.js"></script>
+</body>
+</html>

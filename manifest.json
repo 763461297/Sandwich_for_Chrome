@@ -1,0 +1,58 @@
+{
+    "manifest_version": 2,
+    "name": "Sandwich",
+    "version": "1.0",
+
+    "description": "A tool that listens and triggers callback.",
+    "icons": {
+        "16": "img/icon_16.png",
+        "48": "img/icon_48.png",
+        "128": "img/icon_128.png"
+    },
+    "browser_action": {
+        "default_icon": "img/icon_48.png",
+        "default_title": "Sandwich",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "js/jquery.js",
+                "js/content-script.js"
+            ],
+            "css": [],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "page": "background.html"
+    },
+    "permissions": [
+        "contextMenus", // 右键菜单
+        "tabs", // 标签
+        "notifications", // 通知
+        "webRequest", // web请求
+        "webRequestBlocking",
+        "storage", // 插件本地存储
+        "http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+        "https://*/*" // 可以通过executeScript或者insertCSS访问的网站
+    ],
+    "homepage_url": "http://home.dogest.cn",
+    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html"
+    },
+    "chrome_url_overrides": {
+
+    },
+    "commands": {
+
+    },
+    "offline_enabled": true,
+    "omnibox": {
+        "keyword": "sw"
+    },
+    "short_name": "sandwich",
+    "update_url": "http://home.dogest.cn/chrome/update.xml"
+}
